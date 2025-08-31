@@ -1,0 +1,47 @@
+
+{% extends 'base.html'%}
+{% load static %}
+
+{% block a %}
+
+<style>
+    .a
+    {
+    min-height:400px;
+    background:url('../../static/images/b1.jpeg');
+    background-size:cover;
+    }
+    .b
+    {
+    min-height:400px;
+    background:rgba(149,199,119,.3);
+    }
+
+</style>
+<div class="text-center fs-2  py-2">SIGN<b class="txt-mycolor">IN
+<i class="fa-sharp fa-solid fa-key"></i>
+</b></div>
+<div class="row a">
+    <div>
+<div class="row py-2 b " style="padding:10%" >
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6  p-5 bg-light border border-5 border-secondary  ">
+        <form method="post" autofill="off">
+            {% csrf_token %}
+
+        <input type="text" required placeholder="Username" class="form-control mt-5 " name="email" style="height:40px; border:1px solid black; border-radius:20px;"/>
+        <input type="password" required placeholder="Enter your password" name="password" class="form-control mt-4 " style="height:40px; border:1px solid black; border-radius:20px;"/>
+        <input type="submit"  value="SIGN IN" class="form-control bg-info  mt-5 w-50" style="height:40px; border:1px solid black; border-radius:20px; margin-left:100px;"/>
+
+        </form>
+    </div>
+    <div class=" col-sm-3">
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+{% endblock %}
+

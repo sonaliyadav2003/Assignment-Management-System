@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block a %}
+<div class="row py-2">
+    <div class="col-sm-1"></div>
+    <!----start-->
+    <div class="col-sm-10 border border-2">
+        <table class="table caption-top">
+  <caption>List of Assignment </caption>
+  <thead>
+    <tr>
+      <th scope="col">S.No.</th>
+      <th scope="col">Assignment Title</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Assign By</th>
+      <th scope="col">Total Marks</th>
+      <th scope="col">Date</th>
+      <th scope="col">Last Date</th>
+      <th scope="col">Download File</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+<tbody>
+{%  if assignment %}
+
+{% for a in assignment %}
+  <tr>
+    <th scope="row">{{a.id}}</th>
+    <td>{{a.atitle}}</td>
+    <td>{{a.asubject}}</td>
+    <td>{{a.assignby}}</td>
+    <td>{{a.totalmarks}}</td>
+    <td>{{a.assigndate}}</td>
+    <td>{{a.lastdate}}</td>
+    <td><a href="/{{a.attachfile}}">
+      <button class="btn btn-danger">Download </button></a></td>
+    <td><a  href="/user/assignmentdetails?id={{a.id}}">
+      <input type="button" value="View" class="btn btn-info"/></a></td>
+
+  </tr>
+{% endfor %}
+{% endif %}
+
+  </tbody>
+</table>
+    </div>
+     <!----end-->
+
+    <div class="col-sm-1"></div>
+</div>
+
+
+{% endblock %}
+

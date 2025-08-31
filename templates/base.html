@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <title> ASSIGNEMENT MANAGEMENT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/all.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+
+    <style>
+        .bg-mycolor
+        {
+        background:#00BFA5;
+        }
+        .txt-mycolor
+        {
+        color: #00BFA5;
+        }
+        .s{
+        border:2px solid #4DB6AC;
+        color:#4DB6AC;
+        padding:3%;
+        border-radius:50%;
+
+        }
+        .s:hover
+        {
+        background:#4DB6AC;
+        transform:rotate(360deg);
+        transition:all ease 1s;
+        color:white;
+        }
+        #menu ul li
+        {
+        color:#4DB6AC;
+
+        }
+        #menu ul li a
+        {
+        background:white;
+        transition:all ease 1s;
+        }
+        #menu ul li a:hover
+        {
+        background:#00BFA5;
+        transform:scale(0.9);
+        transition:all ease 1s;
+        }
+        .bfooter a
+        {
+        text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+<div class="row top  bg-mycolor  " style="min-height:5px;"></div>
+<div class="row header txt-center py-3 ">
+    <div class="col-sm-3 logo fs-3 ps-5 ">
+        ASSIGNMENT <b class="txt-mycolor"> SYSTEM
+        <i class="fa-solid fa-book"></i></b>
+    </div>
+    <div class="col-sm-7 menu ">
+        <!---start menu--->
+        <nav class="navbar navbar-expand-lg  " id="menu">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active me-1" aria-current="page" href="/user/index/"><i class="fa-solid fa-house"></i>
+              Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-1 " href="/user/about/"><i class="fa-solid fa-users"></i>
+              ABOUTUS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link me-1" href="/user/contact/"><i class="fa-solid fa-phone"></i>
+              CONTACTUS</a>
+        </li>
+
+           <li class="nav-item">
+          <a class="nav-link me-1" href="/user/gallery/"><i class="fa-solid fa-image"></i>
+              GALLERY</a>
+        </li>
+
+          {% if request.session.user %}
+          <li class="nav-item">
+          <a class="nav-link me-2" href="/user/assignment/"><i class="fa-solid fa-user-plus"></i>
+              Assignment</a>
+        </li>
+          {% endif %}
+
+          <li class="nav-item">
+          <a class="nav-link me-1" href="/user/signup/"><i class="fa-solid fa-user-plus"></i>
+              SIGNUP</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link me-1" href="/user/profile/"><i class="fa-solid fa-image"></i>
+              Profile</a>
+        </li>
+
+          <li class="nav-item">
+          <a class="nav-link me-1" href="/user/lcategory/"><i class="fa-solid fa-image"></i>
+              Lectures</a>
+        </li>
+
+
+
+
+
+          {% if request.session.user is None %}
+          <li class="nav-item">
+          <a class="nav-link me-2" href="/user/signin "><i class="fa-solid fa-arrow-right-to-bracket"></i>
+              SIGNIN</a>
+        </li>
+          {% endif %}
+
+
+          {% if request.session.user %}
+          <li class="nav-item">
+          <a class="nav-link me-2" href="/user/logout "><i class="fa-solid fa-arrow-right-to-bracket"></i>
+              Logout</a>
+        </li>
+          {% endif %}
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+        <!---end menu--->
+
+    </div>
+    <div class="col-sm-2 social pt-3 ">
+    <i class="fa-brands fa-facebook s"></i>
+    <i class="fa-brands fa-twitter s"></i>
+    <i class="fa-brands fa-youtube s"></i>
+    <i class="fa-brands fa-instagram s"></i></div>
+
+</div>
+<div class="row bg-mycolor text-light text-center fw-impact ">
+    <div class="col-sm-4"> <i class="fa-solid fa-phone "></i>
+        +91848547384, 7887576877
+    </div>
+    <div class="col-sm-4"> Welcom to college Assignement System
+    </div>
+    <div class="col-sm-4">
+        <i class="fa-solid fa-envelope "></i>
+        mathuranjali@123gmail.com
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="row content">
+    <div class="col-sm-12 " style="min-height:500px;">
+        {% block a %}
+
+        {% endblock %}
+    </div>
+</div>
+<div class="row ufooter " style="min-height:400px;">
+    <div class="col-sm-4 bg-dark text-white ps-5   " >
+        <h2 class="pt-5">About Us</h2>
+       <p class="pt-5 pe-5" > Flash sales and promotions are the top reasons people opt in to text messages
+           from businesses.
+        If you’re running a promotion and want your customers to
+           take action immediately,
+        there’s hardly a more proven method of
+           getting the word out than text.
+        </p>
+
+    </div>
+     <div class="col-sm-4 bg-dark  text-white" >
+         <h3 class=" text-white pt-5" >Action</h3>
+         <div class="row ">
+             <div class="col-sm-3">
+         <img src="{% static 'images/a1.jfif' %}" style="height:80px;"/>
+             </div>
+             <div class="col-sm-9 ">
+                          If you’re running a promotion and want your customers to take action immediately,
+             </div>
+
+             <div class="col-sm-3 pt-2">
+         <img src="{% static 'images/a2.jfif' %}" style="height:80px;"/>
+             </div>
+             <div class="col-sm-9 pt-3">
+                          If you’re running a promotion and want your customers to take action immediately,
+             </div>
+             <div class="col-sm-3 pt-2">
+         <img src="{% static 'images/a3.jfif' %}" style="height:80px;"/>
+             </div>
+             <div class="col-sm-9 pt-3">
+                          If you’re running a promotion and want your customers to take action immediately,
+             </div>
+         </div>
+     </div>
+     <div class="col-sm-4 bg-dark text-white pe-5">
+         <p class="fs-3 text-white pt-5 ps-3"><u>Contact</u>  Address</p>
+         <p class="ps-3"> <i class="fa-solid fa-house-chimney"></i>   Plot No-43 Behind Hp Petrol Pump
+         Tedhi Pulia Ring Road Vikas Nagar ,Lucknow, Uttar Pradesh 2206222
+         </p>
+         <p><i class="fa-solid fa-phone ps-3"></i> +8792641883</p>
+         <p><i class="fa-solid fa-phone ps-3"></i> +8792641883</p>
+        <p class="text-white ps-3 fs-4"><u>Stay Conn</u>ected</p>
+         <p class="fs-3  ps-3 "> <i class="fa-brands fa-facebook-f "></i>  <i class="fa-brands fa-twitter ps-3"></i>
+             <i class="fa-brands fa-youtube ps-3"></i>  <i class="fa-brands fa-instagram ps-3"></i>
+             <i class="fa-brands fa-whatsapp ps-3"></i> </p>
+
+
+     </div>
+</div>
+<div class="row bfooter" style="min-height:50px;">
+    <div class="col-sm-4 text-center pt-3">copyright <i class="fa-regular fa-copyright"></i> 2015
+        <a href="https://www.techpile.in" class="txt-mycolor">Techpile Technology Pvt. Ltd.</a></div>
+
+    <div class="col-sm-4 pt-3 text-center">
+        <i class="fa-solid fa-envelope "></i> <a href="#" class="txt-mycolor">mathuranjali450@gmail.com</a>
+    </div>
+    <div class="col-sm-4 text-center">
+        <p class="pt-3">Developed by - <a href="#" class="txt-mycolor">Anjali Mathur</a></p>
+
+    </div>
+</div>
+
+</body>
+</html>

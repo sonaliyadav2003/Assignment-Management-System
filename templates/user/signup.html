@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block a %}
+<style>
+   .a
+   {
+   padding:2% 20%;
+
+   }
+   .b
+   {
+   background:url('../../static/images/b1.jpeg');
+   background-size:cover;
+   border-radius:20px;
+   font-family: Freestyle Script;
+   padding-top:20%;
+   font-size:50px;
+   }
+</style>
+
+<div class="text-center fs-2  py-3">SIGN UP<b class="txt-mycolor"> HERE.....
+<i class="fa-sharp fa-solid fa-key"></i>
+</b></div>
+<div class="row  a ">
+    <div class="col-sm-6 b ">
+        <p class=" text-white text-center">WELCOME TO MY PAGE</p>
+        <p class="fs-3  text-white text-center" style="font-family:Arial; "> Please enter your details to<br/> sign up and be part of our great community.</p>
+    </div>
+    <!---form--->
+    <div class="col-sm-6 py-4 px-3 bg-light">
+        {%  if status %}
+        <div class="alert alert-success">You are registred successfully</div>
+        {%  endif %}
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
+            {% csrf_token %}
+        <div class="row g-3">
+  <div class="col">
+    <input type="text" name="name" class="form-control" placeholder="Name" aria-label="NAME">
+  </div>
+</div>
+        <div class="col pt-3">
+                <input type="text"  name="rno" class="form-control" placeholder="Roll no" >
+        </div>
+        <div class="col pt-3">
+                <input required type="text" name="mob" class="form-control" placeholder="Enter your mobile no.." />
+        </div>
+         <div class="col pt-3">
+                <input required type="email" name="email" class="form-control" placeholder="Enter your email.." />
+        </div>
+         <div class="col pt-3">
+                <input  required type="password" name="passwd" class="form-control" placeholder="Enter your password.." />
+        </div>
+         <div class="col pt-4">
+            Course <select class="form-control" name="course" required>
+             <option>Select your course</option>
+             <option>B.Tech(C.S)</option>
+             <option>B.Tech(I.T)</option>
+             <option>Diploma(C.S)</option>
+             <option>Diploma(I.T)</option>
+             <option>BCA</option>
+             <option>PGDCA</option>
+         </select></div>
+            <div class="col pt-4">
+              Semester <select class="form-control " name="sem" required>
+             <option>your pursing semester</option>
+             <option>First</option>
+             <option>Second</option>
+             <option>Third</option>
+             <option>Fourth</option>
+             <option>Fifth</option>
+             <option>Sixth</option>
+             <option>Seventh</option>
+             <option>Eight</option>
+         </select>
+        </div>
+        <div class="col pt-4">
+          Profile picture  <input required name="ppic" type="file" class="form-control">
+        </div>
+         <div class="col py-4">
+             <input type="submit" value="Register now" class="btn btn-outline bg-mycolor mt-3 ">
+        </div>
+        </form>
+    </div>
+
+    <!--form-->
+
+</div>
+{% endblock %}

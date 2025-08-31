@@ -1,0 +1,72 @@
+# Django
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Static files collected
+/static_collected/
+
+# Secret keys and sensitive data
+*.env
+.env
+.env.local
+.env.*.local
+secrets.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# User uploaded files that should not be in repo
+static/profile/*
+static/gallery/*
+static/teacherpic/*
+static/testfile/*
+static/answerfile/*
+static/vcategory/*
+
+# But keep the directories
+!static/profile/.gitkeep
+!static/gallery/.gitkeep
+!static/teacherpic/.gitkeep
+!static/testfile/.gitkeep
+!static/answerfile/.gitkeep
+!static/vcategory/.gitkeep

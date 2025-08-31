@@ -1,0 +1,105 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block a %}
+<style>
+
+    .a
+    {
+    min-height:400px;
+    background:url('../../static/images/w1.jpg');
+    background-size:cover;
+    }
+    .b
+    {
+    min-height:400px;
+    background:rgba(0,0,0,.3);
+    }
+    .c
+    {
+    height:500px;
+    background:url('../../static/images/m1.jpg');
+    background-size:cover;
+    }
+     .b1
+    {
+    min-height:500px;
+    background:rgba(0,0,0,.4);
+    }
+</style>
+<div class="text-center fs-2 m-2 fw-bold">ABOUT <b class="txt-mycolor">US
+    <i class="fa-solid fa-circle-info"></i></b></div>
+<div class="row py-2 ">
+    <div class="col-sm-6 a  ">
+        <div class=" row b">
+            <div class="col-sm-6 "></div>
+
+        </div>
+    </div>
+    <div class="col-sm-6 bg-light px-5">
+        <h2 class="txt-mycolor text-center pt-3">What is Assignment Management System </h2>
+        <p class="fs-5 text-center pt-4 px-3">
+            Assignment & Projects management help teachers to assign tasks and deadlines to
+            students and monitor their performance on completion of these tasks.
+            An assignment, in general, is a project or piece of work that is assigned to someone as part of a job
+            or study course. The assignment can take various forms such as homework, essays, dissertations , case studies,
+            class presentations, statements of purpose,
+            reports, thesis, term papers, semester-end papers or language analysis papers.</p>
+    </div>
+
+    <div class="row "><h3 class="text-center fs-2 fw-bold txt-mycolor pt-5">Experts Team Members</h3>
+        <div class="col-sm-4 py-5 px-5">
+             <div class="card w-100">
+  <img src="{% static 'images/t3.jpg' %}" class="card-img-top" alt="..." style="height:250px;">
+  <div class="card-body ">
+    <h5 class="card-title">John Doe</h5>
+     <p>Professor</p>
+
+
+
+  </div>
+</div>
+        </div>
+        <div class="col-sm-4 py-5 px-5">
+               <div class="card w-100">
+  <img src="{% static 'images/t1.jpg' %}" class="card-img-top" alt="..." style="height:250px;">
+  <div class="card-body">
+       <h5 class="card-title">Johnson Smiyth</h5>
+     <p>Professor</p>
+
+
+
+  </div>
+</div>
+        </div>
+        <div class="col-sm-4 py-5 px-5">
+            <div class="card w-100">
+  <img src="{% static 'images/t2.jpg' %}" class="card-img-top" alt="..." style="height:250px;">
+  <div class="card-body ">
+       <h5 class="card-title">Jassica Smith</h5>
+     <p>Professor</p>
+
+
+
+  </div>
+</div>
+        </div>
+    </div>
+
+    <div class="row c ">
+        <div class="col-sm-12 b1 ">
+           <center> <img src="{% static 'images/m2.jpg' %}" style="height:150px; border:5px groove white" class="my-5 "/></center>
+            <p class="text-center fs-4 text-white mt-5">Assignment & Projects management help teachers
+                </br>to assign tasks and deadlines to
+            students and monitor their performance on </br>completion of these tasks.</p>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+

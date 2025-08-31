@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block a %}
+{% if request.session.user is None %}
+<script>
+
+   alert('YOU HAVE TO LOG IN FIRST');
+   window.location.href="/user/signin/"
+
+</script>
+ {% endif %}
+
+
+
+<div class="row bg-mycolor mt-2"><h1 class="text-center text-white my-3">MY PROFILE</h1>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 ">
+        <!--start card-->
+        {% for x in rdata %}
+        <div class="card mb-3 w-100">
+  <div class="row g-0  ">
+    <div class="col-md-4">
+      <img src="/{{x.pic}}" style="height:400px;" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8 bg-light">
+      <div class="card-body  " style="padding:100px;">
+        <p class="card-text   ">
+            <p class="fs-4 text-info fw-bold">Name:  <i class="text-info">{{x.name}}</i> </p>
+            <p class="fs-4 text-info fw-bold">Email : <i class="text-info">{{x.email}} </i></p>
+            <p class="fs-4 text-info fw-bold">Mobile :<i class="text-info"> {{x.mobile}}</i></p>
+            <p class="fs-4 text-info fw-bold">Course :<i class="text-info"> {{x.course}} </i></p>
+            <p class="fs-4 text-info fw-bold">Semester : <i class="text-info">{{x.year}}</i></p>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+        {% endfor %}
+
+        <!--end card-->
+
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+{% endblock %}
+

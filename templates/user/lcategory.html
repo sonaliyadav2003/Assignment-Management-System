@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block a %}
+{% if request.session.user is None %}
+<script>
+    alert('YOU HAVE TO LOG IN FIRST')
+    location.href="/user/signin/"
+</script>
+{% endif %}
+<div class="text-center fs-2 my-3 fw-bold">Lectures<b class="txt-mycolor"> Video</b></div>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+
+            <!---card--->
+            {% for i in ldata %}
+            <div class="col-sm-3 my-3">
+
+            <div class="card">
+                <img src="/{{i.cpic}}" class="img-card-top"/>
+                <div class="card-body">
+                    <a href="/user/lecture?msg={{i.id}}">
+                    <h5 class="card-title text-center " style="text-decoration:none;">{{i.category}}</h5>
+                    </a>
+                </div>
+            </div>
+            </div>
+            {% endfor %}
+
+            <!---end card--->
+
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+{% endblock %}

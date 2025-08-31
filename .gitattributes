@@ -1,0 +1,33 @@
+# GitHub Language Detection Configuration
+# This file tells GitHub how to classify files for language statistics
+
+# Mark Bootstrap CSS files as vendored (exclude from stats) but include JS
+static/css/bootstrap*.css linguist-vendored
+static/css/bootstrap*.min.css linguist-vendored
+
+# Explicitly ensure JavaScript files are detected and included
+*.js linguist-language=JavaScript
+static/js/*.js linguist-language=JavaScript
+
+# Mark all static assets as vendored to focus on application code
+static/webfonts/* linguist-vendored
+static/images/* linguist-vendored
+
+# Mark common third-party/vendor files as vendored
+static/css/all.css linguist-vendored
+
+# Ensure Python files are properly detected
+*.py linguist-language=Python
+
+# Reduce HTML weight in language stats to better balance the breakdown
+templates/**/*.html linguist-detectable=false
+
+# Mark Django migration files as generated (optional)
+*/migrations/*.py linguist-generated
+
+# Ensure Django project files are recognized
+manage.py linguist-language=Python
+*/settings.py linguist-language=Python
+*/urls.py linguist-language=Python
+*/views.py linguist-language=Python
+*/models.py linguist-language=Python
